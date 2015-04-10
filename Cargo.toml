@@ -1,0 +1,11 @@
+[package]
+
+name = "libmarisa"
+version = "0.0.1"
+authors = ["Alexander Polakov <plhk@sdf.org>"]
+
+[dependencies.libmarisa-sys]
+git = "https://github.com/polachok/libmarisa-sys"
+
+[dependencies]
+libc = "0.1.*"

@@ -1,5 +1,4 @@
-#![feature(libc)]
-extern crate "libmarisa-sys" as ffi;
+extern crate libmarisa_sys as ffi;
 extern crate libc;
 use libc::{c_int};
 use std::ffi::CString;
