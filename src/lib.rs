@@ -20,7 +20,7 @@ impl KeySet {
         }
     }
 
-    pub fn push(&self, str: &str, val: i32) {
+    pub fn push(&mut self, str: &str, val: i32) {
         unsafe {
             let len = str.len();
             ffi::keyset_push(self.keyset, CString::new(str).unwrap().as_ptr(), len as c_int, val as c_int);
@@ -43,7 +43,7 @@ impl Trie {
         }
     }
 
-    pub fn build(&self, keyset: &KeySet) {
+    pub fn build(&mut self, keyset: &KeySet) {
         unsafe {
             ffi::trie_build(self.trie, keyset.keyset, 0);
         }
