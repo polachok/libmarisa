@@ -26,6 +26,12 @@ impl KeySet {
             ffi::keyset_push(self.keyset, CString::new(str).unwrap().as_ptr(), len as c_int, val as c_int);
         }
     }
+
+    pub fn num_keys(&self) -> usize {
+        unsafe {
+            ffi::keyset_num_keys(self.keyset) as usize
+        }
+    }
 }
 
 impl Drop for KeySet {
