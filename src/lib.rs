@@ -54,4 +54,10 @@ impl Trie {
             ffi::trie_save(self.trie, CString::new(path.to_str().unwrap()).unwrap().as_ptr());
         }
     }
+
+    pub fn load(&self, path: &Path) {
+        unsafe {
+            ffi::trie_mmap(self.trie, CString::new(path.to_str().unwrap()).unwrap().as_ptr());
+        }
+    }
 }
