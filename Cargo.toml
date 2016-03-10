@@ -8,4 +8,4 @@ authors = ["Alexander Polakov <plhk@sdf.org>"]
 git = "https://github.com/polachok/libmarisa-sys"
 
 [dependencies]
-libc = "0.1.*"
+libc = "0.2"

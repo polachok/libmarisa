@@ -67,3 +67,11 @@ impl Trie {
         }
     }
 }
+
+impl Drop for Trie {
+	fn drop(&mut self) {
+		unsafe {
+			ffi::trie_destroy(self.trie);
+		}
+	}
+}
